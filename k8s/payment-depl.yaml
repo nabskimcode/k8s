@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: payment-depl
+  template:
+    metadata:
+      labels:
+        app: payment-depl
+    spec:
+      containers:
+        - name: payment-depl
+          image: nabil/payment-depl
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: payment-depl-srv
+spec:
+  selector:
+    app: payment-depl
+  ports:
+    - name: payment-depl
+      protocol: TCP
+      port: 3000
+      targetPort: 3000
