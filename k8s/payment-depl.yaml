@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: payment-depl
-          image: nabil/payment-depl
+          image: name/payment-depl
 ---
 apiVersion: v1
 kind: Service
