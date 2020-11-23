@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: order
-          image: nabil/order
+          image: name/order
 ---
 apiVersion: v1
 kind: Service
